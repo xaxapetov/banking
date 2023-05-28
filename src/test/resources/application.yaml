@@ -1,0 +1,33 @@
+spring:
+  datasource:
+    url: ${DB_URL}
+    username: ${DB_USERNAME}
+    password: ${DB_PASSWORD}
+
+  jpa:
+    hibernate:
+      ddl-auto: none
+    show-sql: true
+    database-platform: org.hibernate.dialect.PostgreSQL10Dialect
+
+
+  liquibase:
+    change-log: classpath:db/changelog/db.changelog-test-master.yaml
+
+logging:
+  level:
+    ROOT: INFO
+    org.springframework:
+      orm.jpa: DEBUG
+      transaction: DEBUG
+
+springdoc:
+  api-docs:
+    path: /api-docs
+  swagger-ui:
+    path: /swagger-ui.html
+
+banking:
+  security:
+    jwt:
+      secret-key: OefdsdsvNAew3eoW423740tfmv34y93WDc8m23RQcT539u7dfbnHdrg9jdfFGSDFGre943hfddxRSDGSDSEfdfnr34835y7uD

@@ -1,0 +1,35 @@
+spring:
+  datasource:
+    driver-class-name: org.postgresql.Driver
+    url: jdbc:postgresql://localhost:5432/banking_db
+    username: postgres
+    password: postgres
+
+  jpa:
+    hibernate:
+      ddl-auto: none
+    show-sql: true
+    properties:
+      hibernate:
+        dialect: org.hibernate.dialect.PostgreSQL10Dialect
+
+  liquibase:
+    change-log: classpath:db/changelog/db.changelog-master.yaml
+logging:
+  level:
+    ROOT: INFO
+    ru.iql.banking: DEBUG
+    org.springframework:
+      orm.jpa: DEBUG
+      transaction: DEBUG
+
+springdoc:
+  api-docs:
+    path: /api-docs
+  swagger-ui:
+    path: /swagger-ui.html
+
+banking:
+  security:
+    jwt:
+      secret-key: OefdsdsvNAew3eoW423740tfmv34y93WDc8m23RQcT539u7dfbnHdrg9jdfFGSDFGre943hfddxRSDGSDSEfdfnr34835y7uD

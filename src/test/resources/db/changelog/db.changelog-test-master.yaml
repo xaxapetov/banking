@@ -1,0 +1,5 @@
+databaseChangeLog:
+- include:
+    file: classpath:db/changelog/v1.0.0/init-test-changelog.postgresql.sql
+- include:
+    file: classpath:db/changelog/v1.0.0/add-test-data-changelog.postgresql.sql
